@@ -3,7 +3,7 @@ variable "name" {
 }
 
 variable "environment" {
-  description "Name of your environment"
+  description = "Name of your environment"
   default = "dev"
 }
 
