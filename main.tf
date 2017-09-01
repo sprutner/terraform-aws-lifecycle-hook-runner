@@ -72,6 +72,7 @@ resource "aws_iam_policy" "lifecycle" {
                 "ssm:DescribeDocument*",
                 "ssm:GetDocument",
                 "ssm:DescribeInstance*",
+                "ec2:CreateNetworkInterface"
             ]
         }
     ]
