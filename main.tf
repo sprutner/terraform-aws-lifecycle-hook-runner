@@ -113,6 +113,7 @@ resource "aws_lambda_function" "lifecycle" {
         ENVIRONMENT = "${var.environment}"
         SNS_ARN     = "${aws_sns_topic.operator.arn}"
         COMMANDS    = "${var.commands}"
+        NAME        = "${var.name}"
       }
     }
   }
