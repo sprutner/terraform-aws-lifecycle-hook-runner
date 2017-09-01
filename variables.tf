@@ -8,6 +8,7 @@ variable "environment" {
 }
 
 variable "subnet_ids" {
+  type        = "list"
   description = "Desired subnet with Internet and Consul access for Lambda Function"
 }
 
@@ -31,3 +32,5 @@ variable "consul_url" {
 variable "autoscaling_group_name" {
   description = "Name of desired auto-scaling group to apply lifecycle hook to"
 }
+
+variable "private_subnet_ids"
