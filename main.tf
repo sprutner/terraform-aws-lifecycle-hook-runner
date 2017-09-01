@@ -100,7 +100,7 @@ resource "aws_lambda_function" "lifecycle" {
     handler           = "lifecycle.lambda_handler"
     source_code_hash  = "${base64sha256(file("${path.module}/lifecycle.py.zip"))}"
     vpc_config        = {
-      subnet_ids = ["${var.private_subnet_ids}"]
+      subnet_ids = ["${var.subnet_ids}"]
       security_group_ids = ["${aws_security_group.consul-nomad.id}"]
       }
 
