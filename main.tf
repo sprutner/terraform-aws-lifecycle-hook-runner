@@ -136,6 +136,7 @@ resource "aws_sns_topic_subscription" "lifecycle" {
 }
 
 resource "aws_autoscaling_lifecycle_hook" "lifecycle" {
+  depends_on              = ["aws_iam_policy_attachment.lifecycle"]
   name                    = "${var.environment}-${var.name}-lifecycle"
   autoscaling_group_name  = "${var.autoscaling_group_name}"
   default_result          = "ABANDON"
