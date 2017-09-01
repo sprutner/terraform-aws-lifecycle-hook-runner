@@ -101,7 +101,7 @@ resource "aws_lambda_function" "lifecycle" {
     source_code_hash  = "${base64sha256(file("${path.module}/lifecycle.py.zip"))}"
     vpc_config        = {
       subnet_ids = ["${var.subnet_ids}"]
-      security_group_ids = ["${aws_security_group.consul-nomad.id}"]
+      security_group_ids = ["${var.security_group_ids}"]
       }
 
     environment {
@@ -137,7 +137,7 @@ resource "aws_sns_topic_subscription" "lifecycle" {
 
 resource "aws_autoscaling_lifecycle_hook" "lifecycle" {
   name                    = "${var.environment}-${var.name}-lifecycle"
-  autoscaling_group_name  = "${aws_autoscaling_group.nomad-asg.name}"
+  autoscaling_group_name  = "${var.autoscaling_group_name}"
   default_result          = "ABANDON"
   heartbeat_timeout       = 300
   lifecycle_transition    = "autoscaling:EC2_INSTANCE_TERMINATING"
