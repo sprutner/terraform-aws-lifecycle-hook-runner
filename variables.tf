@@ -8,11 +8,11 @@ variable "environment" {
 }
 
 variable "subnet_ids" {
-  description "Desired subnet with Internet and Consul access for Lambda Function"
+  description = "Desired subnet with Internet and Consul access for Lambda Function"
 }
 
 variable "security_group_ids" {
-  description "Security Group IDs to allow Internet and Consul access for Lambda function"
+  description = "Security Group IDs to allow Internet and Consul access for Lambda function"
 }
 
 ## Environment Variables for Lambda
@@ -25,9 +25,9 @@ EOF
 }
 
 variable "consul_url" {
-  description "Base URL of your consul server"
+  description = "Base URL of your consul server"
 }
 
 variable "autoscaling_group_name" {
-  description "Name of desired auto-scaling group to apply lifecycle hook to"
+  description = "Name of desired auto-scaling group to apply lifecycle hook to"
 }
