@@ -32,5 +32,3 @@ variable "consul_url" {
 variable "autoscaling_group_name" {
   description = "Name of desired auto-scaling group to apply lifecycle hook to"
 }
-
-variable "private_subnet_ids"
