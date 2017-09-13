@@ -1,15 +1,20 @@
 # tf_aws_lifecycle_hook_runner
 
+## Overview
+
+This module will add lifecycle hooks to run commands on autoscaling group instances before they terminate, so that you can easily run pre-termination tasks or shutdown scripts before the instance is removed.
+
+Queuing is used to ensure commands are run one at a time in the case you are doing a rolling deployment of infrastructure, such as is used in the create_before_destroy lifecycle.
+
+It uses SSM, Lifecycle hooks, SNS topics,
+The module will create the IAM policies, SNS topics, Lambda function, and lifecycle hooks. It will create a list in Consul for queuing at /kv/asg/${name} so ensure this is accessible.
+
 ## Requirements
 
 - A Consul KV store that lambda can write to from your AWS environment
 - An Autoscaling Group name to attach this to
 - A subnet with a NAT Gateway (for Lambda to reach out to SSM)
 - A security group that will allow Lambda to make HTTP requests to consul
-
-## Overview
-
-The module will create IAM policies, Lambda function, and lifecycle hooks. It will create a list in Consul for queuing at /kv/asg/${name} so ensure this is accessible.
 
 ## Usage
 
