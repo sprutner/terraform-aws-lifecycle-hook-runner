@@ -48,7 +48,7 @@ module "lifecycle_hook" {
 echo 'test',
 echo 'hola'
 EOF
-  consul_url                  = "http://consul.credo${var.environment}.dev"
+  consul_url                  = "http://consul.companyxyz${var.environment}.dev"
   autoscaling_group_name      = "${module.nomad_client.asg_name}"
 }
 ```
