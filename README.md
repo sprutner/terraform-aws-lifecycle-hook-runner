@@ -12,6 +12,7 @@ The module will create the IAM policies, SNS topics, Lambda function, and lifecy
 ## Requirements
 
 - A Consul KV store that lambda can write to from your AWS environment
+- The AWS SSM agent is installed on your instances
 - An Autoscaling Group name to attach this to
 - A subnet with a NAT Gateway (for Lambda to reach out to SSM)
 - A security group that will allow Lambda to make HTTP requests to consul
