@@ -1,4 +1,4 @@
-# tf_aws_lifecycle_hook_runner
+# terraform-aws-lifecycle-hook-runner
 
 ## Overview
 
