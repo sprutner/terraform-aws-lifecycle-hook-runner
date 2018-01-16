@@ -40,7 +40,7 @@ Take note of the 'commands' format. The commands will be run in the order you pl
 
 ```hcl
 module "lifecycle_hook" {
-  source                      = "github.com/sprutner/tf_aws_lifecycle_hook_runner"
+  source                      = "github.com/sprutner/terraform-aws-lifecycle-hook-runner"
   name                        = "test"
   environment                 = "${var.environment}"
   subnet_ids                  = "${module.vpc.app_subnets}"
